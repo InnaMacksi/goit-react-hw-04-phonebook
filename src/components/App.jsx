@@ -58,7 +58,7 @@ const App = () => {
       { name, id: nanoid(), number },
     ]);
   };
-  
+
   return (
     <div className={styles.container}>
       <h1>Phonebook</h1>
@@ -69,4 +69,5 @@ const App = () => {
     </div>
   );
 };
+
 export default App;
