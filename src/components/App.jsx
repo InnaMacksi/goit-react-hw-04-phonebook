@@ -22,6 +22,7 @@ const App = () => {
       setContacts(JSON.parse(savedContacts));
     }
   }, []);
+
   useEffect(() => {
       localStorage.setItem('contacts', JSON.stringify(contacts));
     },
@@ -40,11 +41,13 @@ const App = () => {
       )
     );
   }, [contacts, filter]);
+
   const deleteContact = idContacts => {
     setContacts(prevState =>
       prevState.filter(contact => contact.id !== idContacts)
     );
   };
+
   const handleSubmit = (name, number) => {
     const isExist = contacts.find(contact => contact.name === name);
     if (isExist) {
@@ -55,6 +58,7 @@ const App = () => {
       { name, id: nanoid(), number },
     ]);
   };
+  
   return (
     <div className={styles.container}>
       <h1>Phonebook</h1>
