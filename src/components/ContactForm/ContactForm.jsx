@@ -22,8 +22,8 @@ const ContactForm = ({ onSubmit }) => {
     e.preventDefault();
     const { name, number } = e.target.elements;
     onSubmit(name.value, number.value);
-    name.value = '';
-    number.value = '';
+    setName('');
+    setNumber('');
   };
 
   return (
@@ -31,6 +31,7 @@ const ContactForm = ({ onSubmit }) => {
       <label htmlFor={idContacts}>
         <p>Name</p>
         <input
+          value={name}
           id={idContacts}
           onChange={handleChange}
           type="text"
@@ -43,6 +44,7 @@ const ContactForm = ({ onSubmit }) => {
       <label htmlFor={idContacts}>
         <p>Number</p>
         <input
+          value={number}
           id={idContacts}
           onChange={handleChange}
           type="tel"
